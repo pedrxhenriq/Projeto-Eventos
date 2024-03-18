@@ -23,12 +23,13 @@ Este projeto tem como objetivo desenvolver uma API em Python, projetada para int
 - Kanban
 
 ### **Equipe**
+`Diagrama da equipe`
 
 <div align="center">
 <img src="https://github.com/users/pedrxhenriq/projects/3/assets/91913826/d8bbc592-704a-4ee1-9675-33eb8539d27f" alt="Equipe" />
 </div>
 
-`Design e Front-end:`
+`Design e Front-end`
 
 Dois membros dedicados ao design e à implementação da interface do usuário (UI) e experiência do usuário (UX), garantindo uma estética atraente e uma navegação intuitiva.
 
@@ -44,7 +45,7 @@ Dois membros dedicados ao design e à implementação da interface do usuário (
 ><br>
 >https://www.linkedin.com/in/cau%C3%AA-rodrigues-067676268/
 
-`Desenvolvimento da API (Back-end):`
+`Desenvolvimento da API (Back-end)`
 
 Três membros focados no desenvolvimento da API, construindo o backbone da nossa aplicação para garantir escalabilidade, segurança e eficiência.
 
@@ -66,7 +67,7 @@ Três membros focados no desenvolvimento da API, construindo o backbone da nossa
 ><br>
 >https://www.linkedin.com/in/pedro-henrique-silva-24a3a920a
 
-`Validação e Testes:`
+`Validação e Testes`
 
 Duas pessoas responsáveis por validar e testar cada etapa do desenvolvimento, garantindo a qualidade do código e a funcionalidade correta da aplicação.
 
@@ -82,6 +83,6 @@ Duas pessoas responsáveis por validar e testar cada etapa do desenvolvimento, g
 ><br>
 >https://www.linkedin.com/in/lucas-ribeiro-a4b429258
 
-`Escalabilidade:`
+`Escalabilidade`
 
 De acordo com as necessidades do projeto, estamos prontos para expandir nossa equipe em cada área, assegurando uma abordagem flexível para enfrentar os desafios que possam surgir.
