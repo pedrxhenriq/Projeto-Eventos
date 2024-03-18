@@ -35,11 +35,13 @@ Dois membros dedicados ao design e à implementação da interface do usuário (
 **Carlos Eduardo Domiciano** 
 
 >carlos.domiciano@aluno.faculdadeimpacta.com.br
+><br>
 >https://www.linkedin.com/in/carlos-eduardo-domiciano-ramos-j%C3%BAnior-0b924217a
 
 **Caue Enzo Nakandakari**
 
 >caue.rodrigues@aluno.faculdadeimpacta.com.br
+><br>
 >https://www.linkedin.com/in/cau%C3%AA-rodrigues-067676268/
 
 `Desenvolvimento da API (Back-end):`
