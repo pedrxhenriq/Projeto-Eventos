@@ -51,16 +51,19 @@ Três membros focados no desenvolvimento da API, construindo o backbone da nossa
 **Davi Nascimento Garcia**
 
 >davi.garcia@aluno.faculdadeimpacta.com.br
+><br>
 >https://www.linkedin.com/in/davi-nascimento-garcia
 
 **Lucas Schoppan Alves**
 
 >lucas.schoppan@aluno.faculdadeimpacta.com.br
+><br>
 >https://www.linkedin.com/in/lucas-schoppan-a-dos-santos-962a01268
 
 **Pedro Henrique Magalhães**
 
 >pedro.magalhaes@aluno.faculdadeimpacta.com.br
+><br>
 >https://www.linkedin.com/in/pedro-henrique-silva-24a3a920a
 
 `Validação e Testes:`
@@ -70,11 +73,13 @@ Duas pessoas responsáveis por validar e testar cada etapa do desenvolvimento, g
 **Gabriel Zulzke de Moraes**
 
 >gabriel.zulzke@aluno.faculdadeimpacta.com.br
+><br>
 >https://www.linkedin.com/in/gabriel-zulzke-de-moraes-8496052b2
 
 **Lucas Ribeiro Penhoela**
 
 >lucas.penhoela@aluno.faculdadeimpacta.com.br
+><br>
 >https://www.linkedin.com/in/lucas-ribeiro-a4b429258
 
 `Escalabilidade:`
