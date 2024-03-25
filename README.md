@@ -26,7 +26,7 @@ Este projeto tem como objetivo desenvolver uma API em Python, projetada para int
 `Diagrama da equipe`
 
 <div align="center">
-<img src="https://github.com/users/pedrxhenriq/projects/3/assets/91913826/d8bbc592-704a-4ee1-9675-33eb8539d27f" alt="Equipe" />
+<img src="https://github.com/pedrxhenriq/API-Multi-Banco/assets/130767590/36f255ce-6550-4c9f-b391-6647e8a8a039" alt="Equipe" />
 </div>
 
 `Design e Front-end`
