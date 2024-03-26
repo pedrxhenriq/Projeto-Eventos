@@ -85,4 +85,4 @@ Duas pessoas responsáveis por validar e testar cada etapa do desenvolvimento, g
 
 `Escalabilidade`
 
-De acordo com as necessidades do projeto, estamos prontos para expandir nossa equipe em cada área, assegurando uma abordagem flexível para enfrentar os desafios que possam surgir.
+De acordo com as necessidades do projeto em curso, estamos prontos para dar um passo à frente e fortalecer ainda mais nossa equipe em todas as áreas pertinentes. Reconhecemos a importância de uma abordagem flexível para enfrentar os desafios que possam surgir durante o desenvolvimento do projeto. Assim, estamos comprometidos em expandir nossa equipe de maneira estratégica e eficaz, garantindo que tenhamos os recursos necessários para enfrentar qualquer obstáculo que possa surgir em nosso caminho. Estamos confiantes de que, com essa expansão, seremos capazes de atender às demandas do projeto de forma eficiente e alcançar os objetivos estabelecidos com sucesso.
