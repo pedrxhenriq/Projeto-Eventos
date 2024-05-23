@@ -1,4 +1,4 @@
-### **CADASTRO DE EVENTOS**
+### **🎪 CADASTRO DE EVENTOS 🎪**
 
 Este projeto tem como objetivo desenvolver uma API em Python, projetada para integração fácil com diversos tipos de bancos de dados. Essa API visa proporcionar uma solução para atender às necessidades específicas de diferentes aplicações, permitindo a manipulação de dados de forma eficiente e intuitiva.
 
