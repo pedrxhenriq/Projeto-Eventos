@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Criar Evento</title>
+    <script>
+        function togglePrecoField() {
+            var gratuitoCheckbox = document.getElementById("gratuito");
+            var precoField = document.getElementById("preco");
+
+            if (gratuitoCheckbox.checked) {
+                precoField.disabled = true;
+                precoField.value = "";
+                precoField.removeAttribute("required");
+            } else {
+                precoField.disabled = false;
+                precoField.setAttribute("required", "required");
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Criar Novo Evento</h1>
+    <form method="post">
+        <label for="titulo">Título:</label>
+        <input type="text" id="titulo" name="titulo" required>
+        <br>
+        <label for="descricao">Descrição:</label>
+        <textarea id="descricao" name="descricao" required></textarea>
+        <br>
+        <label for="data_inicio">Data de Início:</label>
+        <input type="datetime-local" id="data_inicio" name="data_inicio" required>
+        <br>
+        <label for="data_fim">Data de Fim:</label>
+        <input type="datetime-local" id="data_fim" name="data_fim" required>
+        <br>
+        <label for="localizacao">Localização:</label>
+        <input type="text" id="localizacao" name="localizacao" required>
+        <br>
+        <label for="capacidade">Capacidade:</label>
+        <input type="number" id="capacidade" name="capacidade" required>
+        <br>
+        <label for="gratuito">Gratuito:</label>
+        <input type="checkbox" id="gratuito" name="gratuito" onclick="togglePrecoField()">
+        <br>
+        <label for="preco">Preço:</label>
+        <input type="number" step="0.01" id="preco" name="preco">
+        <br>
+        <label for="idade_minima">Idade Mínima:</label>
+        <input type="number" id="idade_minima" name="idade_minima">
+        <br>
+        <button type="submit">Create</button>
+    </form>
+</body>
+</html>
