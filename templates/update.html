@@ -34,9 +34,6 @@
         <label for="data_fim">Data de Fim:</label>
         <input type="datetime-local" id="data_fim" name="data_fim" value="{{ evento.data_fim.strftime('%Y-%m-%dT%H:%M') }}" required>
         <br>
-        <label for="localizacao">Localização:</label>
-        <input type="text" id="localizacao" name="localizacao" value="{{ evento.localizacao }}" required>
-        <br>
         <label for="capacidade">Capacidade:</label>
         <input type="number" id="capacidade" name="capacidade" value="{{ evento.capacidade }}" required>
         <br>
@@ -48,6 +45,27 @@
         <br>
         <label for="idade_minima">Idade Mínima:</label>
         <input type="number" id="idade_minima" name="idade_minima" value="{{ evento.idade_minima }}">
+        <br>
+        <label for="condicoes_climaticas">Condições Climáticas:</label>
+        <textarea id="condicoes_climaticas" name="condicoes_climaticas">{{ evento.condicoes_climaticas }}</textarea>
+        <br>
+        <label for="cep">CEP:</label>
+        <input type="text" id="cep" name="cep" value="{{ evento.cep }}">
+        <br>
+        <label for="logradouro">Logradouro:</label>
+        <input type="text" id="logradouro" name="logradouro" value="{{ evento.logradouro }}">
+        <br>
+        <label for="bairro">Bairro:</label>
+        <input type="text" id="bairro" name="bairro" value="{{ evento.bairro }}">
+        <br>
+        <label for="cidade">Cidade:</label>
+        <input type="text" id="cidade" name="cidade" value="{{ evento.cidade }}">
+        <br>
+        <label for="uf">UF:</label>
+        <input type="text" id="uf" name="uf" value="{{ evento.uf }}">
+        <br>
+        <label for="numero">Número:</label>
+        <input type="text" id="numero" name="numero" value="{{ evento.numero }}">
         <br>
         <button type="submit">Atualizar</button>
     </form>
