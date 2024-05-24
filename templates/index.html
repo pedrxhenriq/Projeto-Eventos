@@ -21,6 +21,13 @@
                     Preço: R$ {{ evento.preco }}<br>
                 {% endif %}
                 Idade Mínima: {{ evento.idade_minima or 'Nenhuma' }}<br>
+                Condições Climáticas: {{ evento.condicoes_climaticas or 'Nenhuma' }}<br>
+                CEP: {{ evento.cep }}<br>
+                Logradouro: {{ evento.logradouro }}<br>
+                Bairro: {{ evento.bairro }}<br>
+                Cidade: {{ evento.cidade }}<br>
+                UF: {{ evento.uf }}<br>
+                Número: {{ evento.numero }}<br>
                 <a href="/update/{{ evento.id }}">Editar</a>
                 <a href="/delete/{{ evento.id }}">Excluir</a>
             </li>
