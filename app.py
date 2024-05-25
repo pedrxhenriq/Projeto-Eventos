@@ -1,5 +1,5 @@
 from datetime import datetime, timedelta
-from flask import Flask, render_template, request, redirect, url_for,jsonify
+from flask import Flask, render_template, request, redirect, url_for, jsonify, json
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from models import db, Eventos
@@ -15,10 +15,43 @@ migrate = Migrate(app, db)
 @app.route('/')
 def index():
     eventos = Eventos.query.all()
+    for evento in eventos:
+        evento.condicoes_climaticas = json.loads(evento.condicoes_climaticas)
     return render_template('index.html', eventos=eventos)
 
 @app.route('/create', methods=['GET', 'POST'])
 def create():
+
+    def obter_datas(data_inicial, data_final):
+        datas = []
+
+        data_atual = data_inicial
+
+        datas.append(data_atual.strftime('%Y-%m-%d'))
+
+        while data_atual < data_final:
+            data_atual += timedelta(days=1)
+            datas.append(data_atual.strftime('%Y-%m-%d'))
+
+        return datas
+
+    def combinar_arrays(array_datas, array_informacoes):
+        resultado = {}
+        
+        for data in array_datas:
+            encontrado = False
+            for info in array_informacoes:
+                if data in info:
+                    resultado[data] = info[data]
+                    encontrado = True
+                    break
+            
+            if not encontrado:
+                data_formatada = datetime.strptime(data, "%Y-%m-%d").strftime("%d/%m/%Y")
+                resultado[data] = f"API OpenWeather não tem informações sobre a data {data_formatada}"
+        
+        return resultado  
+
     if request.method == 'POST':
         titulo = request.form['titulo']
         descricao = request.form['descricao']
@@ -35,6 +68,11 @@ def create():
         uf = request.form['uf']
         numero = request.form['numero']
 
+        datas = obter_datas(data_inicio, data_fim)
+        tempo = apiRequests.api_condicoes_climaticas(f"{cidade},BR")
+        
+        condicoes_climaticas = json.dumps(combinar_arrays(datas, tempo))
+
         novo_evento = Eventos(
             titulo=titulo,
             descricao=descricao,
@@ -44,7 +82,7 @@ def create():
             gratuito=gratuito,
             preco=preco,
             idade_minima=idade_minima,
-            condicoes_climaticas= "",
+            condicoes_climaticas= condicoes_climaticas,
             cep=cep,
             logradouro=logradouro,
             bairro=bairro,

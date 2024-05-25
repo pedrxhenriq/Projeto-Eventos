@@ -21,7 +21,29 @@
                     Preço: R$ {{ evento.preco }}<br>
                 {% endif %}
                 Idade Mínima: {{ evento.idade_minima or 'Nenhuma' }}<br>
-                Condições Climáticas: {{ evento.condicoes_climaticas or 'Nenhuma' }}<br>
+                Condições Climáticas: <br>
+                <table border="1">
+                    <tr>
+                        <th>Data</th>
+                        <th>Sensação Térmica</th>
+                        <th>Temperatura</th>
+                        <th>Temperatura Máxima</th>
+                        <th>Temperatura Mínima</th>
+                    </tr>
+                    {% for data, condicoes in evento.condicoes_climaticas.items() %}
+                    <tr>
+                        <td>{{ data }}</td>
+                        {% if "API OpenWeather não tem informações sobre a data" in condicoes %}
+                            <td colspan="4">{{ condicoes }}</td>
+                        {% else %}
+                            <td>{{ condicoes.sensacao_termica }} °C</td>
+                            <td>{{ condicoes.temperatura }} °C</td>
+                            <td>{{ condicoes.temperatura_max }} °C</td>
+                            <td>{{ condicoes.temperatura_min }} °C</td>
+                        {% endif %}
+                    </tr>
+                    {% endfor %}
+                </table>
                 CEP: {{ evento.cep }}<br>
                 Logradouro: {{ evento.logradouro }}<br>
                 Bairro: {{ evento.bairro }}<br>
