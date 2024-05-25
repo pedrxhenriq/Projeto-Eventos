@@ -21,37 +21,6 @@ def index():
 
 @app.route('/create', methods=['GET', 'POST'])
 def create():
-
-    def obter_datas(data_inicial, data_final):
-        datas = []
-
-        data_atual = data_inicial
-
-        datas.append(data_atual.strftime('%Y-%m-%d'))
-
-        while data_atual < data_final:
-            data_atual += timedelta(days=1)
-            datas.append(data_atual.strftime('%Y-%m-%d'))
-
-        return datas
-
-    def combinar_arrays(array_datas, array_informacoes):
-        resultado = {}
-        
-        for data in array_datas:
-            encontrado = False
-            for info in array_informacoes:
-                if data in info:
-                    resultado[data] = info[data]
-                    encontrado = True
-                    break
-            
-            if not encontrado:
-                data_formatada = datetime.strptime(data, "%Y-%m-%d").strftime("%d/%m/%Y")
-                resultado[data] = f"API OpenWeather não tem informações sobre a data {data_formatada}"
-        
-        return resultado  
-
     if request.method == 'POST':
         titulo = request.form['titulo']
         descricao = request.form['descricao']
@@ -99,7 +68,7 @@ def create():
 @app.route('/update/<int:id>', methods=['GET', 'POST'])
 def update(id):
     evento = db.session.query(Eventos).filter(Eventos.id == id).first()
-    if request.method == 'POST':
+    if request.method == 'POST':        
         evento.titulo = request.form['titulo']
         evento.descricao = request.form['descricao']
         evento.data_inicio = datetime.fromisoformat(request.form['data_inicio'])
@@ -108,7 +77,6 @@ def update(id):
         evento.gratuito = 'gratuito' in request.form
         evento.preco = request.form['preco'] if not evento.gratuito else None
         evento.idade_minima = request.form['idade_minima']
-        evento.condicoes_climaticas = ""
         evento.cep = request.form['cep']
         evento.logradouro = request.form['logradouro']
         evento.bairro = request.form['bairro']
@@ -116,9 +84,45 @@ def update(id):
         evento.uf = request.form['uf']
         evento.numero = request.form['numero']
 
+        datas = obter_datas(evento.data_inicio, evento.data_fim)
+        tempo = apiRequests.api_condicoes_climaticas(f"{evento.cidade},BR")
+        
+        evento.condicoes_climaticas = json.dumps(combinar_arrays(datas, tempo))
+
         db.session.commit()
         return redirect(url_for('index'))
     return render_template('update.html', evento=evento)
+
+def obter_datas(data_inicial, data_final):
+    datas = []
+    data_atual = data_inicial
+    datas.append(data_atual.strftime('%Y-%m-%d'))
+
+    if data_inicial.strftime('%Y-%m-%d') == data_final.strftime('%Y-%m-%d'):
+        return datas
+
+    while data_atual < data_final:
+        data_atual += timedelta(days=1)
+        datas.append(data_atual.strftime('%Y-%m-%d'))
+
+    return datas
+
+def combinar_arrays(array_datas, array_informacoes):
+    resultado = {}
+        
+    for data in array_datas:
+        encontrado = False
+        for info in array_informacoes:
+            if data in info:
+                resultado[data] = info[data]
+                encontrado = True
+                break
+            
+        if not encontrado:
+            data_formatada = datetime.strptime(data, "%Y-%m-%d").strftime("%d/%m/%Y")
+            resultado[data] = f"API OpenWeather não tem informações sobre a data {data_formatada}"
+        
+    return resultado  
 
 @app.route('/delete/<int:id>', methods=['GET', 'POST'])
 def delete(id):

@@ -14,7 +14,6 @@
                 Descrição: {{ evento.descricao }}<br>
                 Data de Início: {{ evento.data_inicio.strftime('%Y-%m-%d %H:%M') }}<br>
                 Data de Fim: {{ evento.data_fim.strftime('%Y-%m-%d %H:%M') }}<br>
-                Localização: {{ evento.localizacao }}<br>
                 Capacidade: {{ evento.capacidade }}<br>
                 Gratuito: {{ 'Sim' if evento.gratuito else 'Não' }}<br>
                 {% if not evento.gratuito %}

@@ -17,11 +17,32 @@
                 precoField.setAttribute("required", "required");
             }
         }
+    
+        function validateDate() {
+            var startDate = new Date(document.getElementById('data_inicio').value);
+            var endDate = new Date(document.getElementById('data_fim').value);
+            
+            if (startDate > endDate) {
+                document.getElementById('data_fim').value = '';
+                alert('A data de fim não pode ser anterior à data de início.');
+            }
+        }
+
+        function validateForm() {
+            var startDate = new Date(document.getElementById('data_inicio').value);
+            var endDate = new Date(document.getElementById('data_fim').value);
+            
+            if (startDate > endDate) {
+                alert('A data de fim não pode ser anterior à data de início.');
+                return false;
+            }
+            return true;
+        }
     </script>
 </head>
 <body>
     <h1>Atualizar Evento</h1>
-    <form method="post">
+    <form id="eventoForm" method="post" onsubmit="return validateForm()">
         <label for="titulo">Título:</label>
         <input type="text" id="titulo" name="titulo" value="{{ evento.titulo }}" required>
         <br>
@@ -29,7 +50,7 @@
         <textarea id="descricao" name="descricao" required>{{ evento.descricao }}</textarea>
         <br>
         <label for="data_inicio">Data de Início:</label>
-        <input type="datetime-local" id="data_inicio" name="data_inicio" value="{{ evento.data_inicio.strftime('%Y-%m-%dT%H:%M') }}" required>
+        <input type="datetime-local" id="data_inicio" name="data_inicio" value="{{ evento.data_inicio.strftime('%Y-%m-%dT%H:%M') }}" onchange="validateDate()" required>
         <br>
         <label for="data_fim">Data de Fim:</label>
         <input type="datetime-local" id="data_fim" name="data_fim" value="{{ evento.data_fim.strftime('%Y-%m-%dT%H:%M') }}" required>
@@ -45,9 +66,6 @@
         <br>
         <label for="idade_minima">Idade Mínima:</label>
         <input type="number" id="idade_minima" name="idade_minima" value="{{ evento.idade_minima }}">
-        <br>
-        <label for="condicoes_climaticas">Condições Climáticas:</label>
-        <textarea id="condicoes_climaticas" name="condicoes_climaticas">{{ evento.condicoes_climaticas }}</textarea>
         <br>
         <label for="cep">CEP:</label>
         <input type="text" id="cep" name="cep" value="{{ evento.cep }}">
