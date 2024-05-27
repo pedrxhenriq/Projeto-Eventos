@@ -103,7 +103,8 @@ def obter_datas(data_inicial, data_final):
 
     while data_atual < data_final:
         data_atual += timedelta(days=1)
-        datas.append(data_atual.strftime('%Y-%m-%d'))
+        if data_atual <= data_final:
+            datas.append(data_atual.strftime('%Y-%m-%d'))
 
     return datas
 
@@ -114,13 +115,14 @@ def combinar_arrays(array_datas, array_informacoes):
         encontrado = False
         for info in array_informacoes:
             if data in info:
-                resultado[data] = info[data]
+                data_formatada = datetime.strptime(data, "%Y-%m-%d").strftime("%d/%m/%Y")
+                resultado[data_formatada] = info[data]
                 encontrado = True
                 break
             
         if not encontrado:
             data_formatada = datetime.strptime(data, "%Y-%m-%d").strftime("%d/%m/%Y")
-            resultado[data] = f"API OpenWeather não tem informações sobre a data {data_formatada}"
+            resultado[data_formatada] = f"API OpenWeather não tem informações sobre a data {data_formatada}"
         
     return resultado  
 
