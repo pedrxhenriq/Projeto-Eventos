@@ -16,7 +16,7 @@ Este projeto tem como objetivo desenvolver uma aplicação web chamada “Cadast
 	•	Criar uma interface amigável utilizando HTML, Bootstrap e JavaScript.
 
 
-**Ferramentas utilizadas**
+**`Ferramentas utilizadas`**
 
 Back-end: Python, Flask, Flask-SQLAlchemy, Flask-Migrate
 Front-end: HTML, Bootstrap, JavaScript
