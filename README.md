@@ -17,14 +17,7 @@ Este projeto tem como objetivo desenvolver uma aplicação web chamada “Cadast
 6.	Interface de Usuário:
 	•	Criar uma interface amigável utilizando HTML, Bootstrap e JavaScript.
 
-**'Estrutura do Projeto'**
-
-- event_manager/: Diretório principal do projeto.
-- backend/: Diretório contendo a lógica do servidor, APIs e banco de dados.
-- frontend/: Diretório contendo a interface do usuário.
-- tests/: Diretório contendo os testes automatizados.
-
-**`Requisitos`**
+**Requisitos**
 
 - Python 3.x
 - Pacotes adicionais conforme necessário para integração com bancos de dados específicos (ex: mysql-connector-python para MySQL, pymongo para MongoDB, etc.)
@@ -37,7 +30,7 @@ Este projeto tem como objetivo desenvolver uma aplicação web chamada “Cadast
 - Git/GitHub
 - Kanban
 
-**'Atividades Principais para as Equipes'**
+**Atividades Principais para as Equipes**
 
 Equipe de Back-end:
 
