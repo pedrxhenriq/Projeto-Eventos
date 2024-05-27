@@ -4,55 +4,42 @@ Este projeto tem como objetivo desenvolver uma aplicação web chamada “Cadast
 
 **`Funcionalidades Principais`**
 
-1. Cadastro e Login de Usuários:
-	•	Implementar um sistema de autenticação onde os usuários podem se registrar e fazer login.
-2.	Criação de Eventos:
-	•	Permitir que usuários logados criem eventos com informações como nome do evento, descrição, data, horário e localização.
-3.	Visualização de Eventos:
+1.	Criação de Eventos:
+	•	Permitir a criação eventos com informações como nome do evento, descrição, data, horário e localização.
+2.	Visualização de Eventos:
 	•	Listar todos os eventos criados pelo usuário, com a opção de visualizar detalhes de cada evento.
-4.	Integração com API de Previsão do Tempo:
+3.	Integração com API de Previsão do Tempo:
 	•	Integrar com uma API de previsão do tempo (por exemplo, OpenWeatherMap) para mostrar a previsão do tempo no dia do evento com base na localização fornecida.
-5.	Banco de Dados:
+4.	Banco de Dados:
 	•	Utilizar um banco de dados SQLite para armazenar informações de usuários e eventos.
-6.	Interface de Usuário:
+5.	Interface de Usuário:
 	•	Criar uma interface amigável utilizando HTML, Bootstrap e JavaScript.
 
-**Requisitos**
 
-- Python 3.x
-- Pacotes adicionais conforme necessário para integração com bancos de dados específicos (ex: mysql-connector-python para MySQL, pymongo para MongoDB, etc.)
+**Ferramentas utilizadas**
 
-**`Ferramentas Utilizadas`**
+Back-end: Python, Flask, Flask-SQLAlchemy, Flask-Migrate
+Front-end: HTML, Bootstrap, JavaScript
+Banco de Dados: SQLite
 
-- Python
-- Flask
-- Banco de dados: SQLite
-- Git/GitHub
-- Kanban
 
 **Atividades Principais para as Equipes**
 
 Equipe de Back-end:
 
-1.	Autenticação e Autorização:
-	•	Desenvolver endpoints para registro e login de usuários utilizando Flask.
-	•	Implementar a gestão de sessões e tokens de autenticação.
-2.	Gestão de Eventos:
+1.	Gestão de Eventos:
 	•	Criar endpoints para criação, visualização, edição e exclusão de eventos.
 	•	Implementar a integração com APIs externas para previsão do tempo.
-3.	Banco de Dados:
+2.	Banco de Dados:
 	•	Modelar e implementar o esquema do banco de dados usando Flask-SQLAlchemy.
 	•	Gerenciar migrações de banco de dados com Flask-Migrate.
 
 Equipe de Front-end:
 
-1.	Interface de Usuário:
-	•	Desenvolver páginas de registro, login, criação e visualização de eventos usando HTML e Bootstrap.
-	•	Implementar a navegação entre as diferentes páginas e funcionalidades do aplicativo com JavaScript.
-2.	Consumo de APIs:
+1.	Consumo de APIs:
 	•	Integrar a interface com os endpoints do back-end para enviar e receber dados.
 	•	Exibir informações de previsão do tempo nas páginas de eventos.
-3.	Responsividade e Usabilidade:
+2.	Responsividade e Usabilidade:
 	•	Garantir que a interface seja responsiva e amigável para diferentes dispositivos e tamanhos de tela.
 	•	Implementar feedbacks visuais e mensagens de erro apropriadas.
 
