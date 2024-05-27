@@ -1,58 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <title>Eventos</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var firstAccordionButton = document.querySelector('.accordion-button');
+
+            if (firstAccordionButton) {
+                firstAccordionButton.click();
+            }
+        });
+    </script>
 </head>
+
 <body>
-    <h1>Lista de Eventos</h1>
-    <a href="/create">Adicionar Novo Evento</a>
-    <ul>
-        {% for evento in eventos %}
-            <li>
-                <strong>{{ evento.titulo }}</strong><br>
-                Descrição: {{ evento.descricao }}<br>
-                Data de Início: {{ evento.data_inicio.strftime('%Y-%m-%d %H:%M') }}<br>
-                Data de Fim: {{ evento.data_fim.strftime('%Y-%m-%d %H:%M') }}<br>
-                Capacidade: {{ evento.capacidade }}<br>
-                Gratuito: {{ 'Sim' if evento.gratuito else 'Não' }}<br>
-                {% if not evento.gratuito %}
-                    Preço: R$ {{ evento.preco }}<br>
-                {% endif %}
-                Idade Mínima: {{ evento.idade_minima or 'Nenhuma' }}<br>
-                Condições Climáticas: <br>
-                <table border="1">
-                    <tr>
-                        <th>Data</th>
-                        <th>Sensação Térmica</th>
-                        <th>Temperatura</th>
-                        <th>Temperatura Máxima</th>
-                        <th>Temperatura Mínima</th>
-                    </tr>
-                    {% for data, condicoes in evento.condicoes_climaticas.items() %}
-                    <tr>
-                        <td>{{ data }}</td>
-                        {% if "API OpenWeather não tem informações sobre a data" in condicoes %}
-                            <td colspan="4">{{ condicoes }}</td>
-                        {% else %}
-                            <td>{{ condicoes.sensacao_termica }} °C</td>
-                            <td>{{ condicoes.temperatura }} °C</td>
-                            <td>{{ condicoes.temperatura_max }} °C</td>
-                            <td>{{ condicoes.temperatura_min }} °C</td>
+    <div class="container">
+        <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+            <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+                <span class="fs-4">Lista de Eventos</span>
+            </a>
+
+            <ul class="nav nav-pills">
+                <li class="nav-item"><a href="/create" class="btn btn-primary">Adicionar Novo Evento</a></li>
+            </ul>
+        </header>
+    </div>
+    <div class="container mt-3">
+        <div class="accordion" id="eventosAccordion">
+            {% set primeiro = true %}
+            {% for evento in eventos %}
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="heading{{ evento.id }}">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapse{{ evento.id }}" aria-expanded="false"
+                        aria-controls="collapse{{ evento.id }}">
+                        <strong>{{ evento.titulo }}</strong>
+                    </button>
+                </h2>
+                <div id="collapse{{ evento.id }}" class="accordion-collapse collapse"
+                    aria-labelledby="heading{{ evento.id }}" data-bs-parent="#eventosAccordion">
+                    <div class="accordion-body">
+                        <p><strong>Descrição:</strong> {{ evento.descricao }}</p>
+                        <p><strong>Data de Início:</strong> {{ evento.data_inicio.strftime('%d/%m/%Y %H:%M') }}</p>
+                        <p><strong>Data de Fim:</strong> {{ evento.data_fim.strftime('%d/%m/%Y %H:%M') }}</p>
+                        <p><strong>Capacidade:</strong> {{ evento.capacidade }}</p>
+                        <p><strong>Gratuito:</strong> {{ 'Sim' if evento.gratuito else 'Não' }}</p>
+                        {% if not evento.gratuito %}
+                        <p><strong>Preço:</strong> R$ {{ evento.preco }}</p>
                         {% endif %}
-                    </tr>
-                    {% endfor %}
-                </table>
-                CEP: {{ evento.cep }}<br>
-                Logradouro: {{ evento.logradouro }}<br>
-                Bairro: {{ evento.bairro }}<br>
-                Cidade: {{ evento.cidade }}<br>
-                UF: {{ evento.uf }}<br>
-                Número: {{ evento.numero }}<br>
-                <a href="/update/{{ evento.id }}">Editar</a>
-                <a href="/delete/{{ evento.id }}">Excluir</a>
-            </li>
-        {% endfor %}
-    </ul>
+                        <p><strong>Idade Mínima:</strong> {{ evento.idade_minima or 'Nenhuma' }}</p>
+                        <p><strong>Endereço:</strong> {{ evento.logradouro }} {{ evento.numero }}, {{ evento.bairro }},
+                            {{ evento.cidade }} - {{ evento.uf }}, {{ evento.cep }}</p>
+                        <p><strong>Condições Climáticas:</strong></p>
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Data</th>
+                                    <th>Sensação Térmica</th>
+                                    <th>Temperatura</th>
+                                    <th>Temperatura Máxima</th>
+                                    <th>Temperatura Mínima</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for data, condicoes in evento.condicoes_climaticas.items() %}
+                                <tr>
+                                    <td>{{ data }}</td>
+                                    {% if "API OpenWeather não tem informações sobre a data" in condicoes %}
+                                    <td colspan="4">{{ condicoes }}</td>
+                                    {% else %}
+                                    <td>{{ condicoes.sensacao_termica }} °C</td>
+                                    <td>{{ condicoes.temperatura }} °C</td>
+                                    <td>{{ condicoes.temperatura_max }} °C</td>
+                                    <td>{{ condicoes.temperatura_min }} °C</td>
+                                    {% endif %}
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                        <a href="/update/{{ evento.id }}" class="btn btn-secondary">Editar</a>
+                        <a href="/delete/{{ evento.id }}" class="btn btn-danger">Excluir</a>
+                    </div>
+                </div>
+            </div>
+            {% set primeiro = false %}
+            {% endfor %}
+        </div>
+    </div>
+
 </body>
+
 </html>
