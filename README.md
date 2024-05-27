@@ -77,8 +77,6 @@ Equipe de Testes:
 
 `Design e Front-end`
 
-Dois membros dedicados ao design e à implementação da interface do usuário (UI) e experiência do usuário (UX), garantindo uma estética atraente e uma navegação intuitiva.
-
 **Carlos Eduardo Domiciano** 
 
 >carlos.domiciano@aluno.faculdadeimpacta.com.br
@@ -92,8 +90,6 @@ Dois membros dedicados ao design e à implementação da interface do usuário (
 >https://www.linkedin.com/in/cau%C3%AA-rodrigues-067676268/
 
 `Desenvolvimento da API (Back-end)`
-
-Três membros focados no desenvolvimento da API, construindo o backbone da nossa aplicação para garantir escalabilidade, segurança e eficiência.
 
 **Davi Nascimento Garcia**
 
@@ -114,8 +110,6 @@ Três membros focados no desenvolvimento da API, construindo o backbone da nossa
 >https://www.linkedin.com/in/pedro-henrique-silva-24a3a920a
 
 `Validação e Testes`
-
-Duas pessoas responsáveis por validar e testar cada etapa do desenvolvimento, garantindo a qualidade do código e a funcionalidade correta da aplicação.
 
 **Gabriel Zulzke de Moraes**
 
