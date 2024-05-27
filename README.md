@@ -23,7 +23,7 @@ Front-end: HTML, Bootstrap, JavaScript
 Banco de Dados: SQLite
 
 
-**Atividades Principais para as Equipes**
+**`Atividades Principais para as Equipes`**
 
 Equipe de Back-end:
 
