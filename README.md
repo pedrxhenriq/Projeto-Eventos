@@ -1,13 +1,28 @@
 ### **🎪 CADASTRO DE EVENTOS 🎪**
 
-Este projeto tem como objetivo desenvolver uma API em Python, projetada para integração fácil com diversos tipos de bancos de dados. Essa API visa proporcionar uma solução para atender às necessidades específicas de diferentes aplicações, permitindo a manipulação de dados de forma eficiente e intuitiva.
+Este projeto tem como objetivo desenvolver uma aplicação web chamada “Cadastro de Eventos” onde os usuários podem criar, visualizar e gerenciar eventos. O sistema permitirá a integração com APIs externas para fornecer informações adicionais sobre os eventos, como previsão do tempo para o dia do evento.
 
 **`Funcionalidades Principais`**
 
-- Integração fácil com diferentes tipos de bancos de dados, como MySQL, PostgreSQL, SQLite, MongoDB, entre outros.
-- Suporte para operações CRUD (Create, Read, Update, Delete) em dados armazenados nos bancos de dados.
-- Estrutura modular e extensível para adição de novas funcionalidades conforme necessário.
-- Exemplos de uso para facilitar a implementação e utilização da API.
+1. Cadastro e Login de Usuários:
+	•	Implementar um sistema de autenticação onde os usuários podem se registrar e fazer login.
+2.	Criação de Eventos:
+	•	Permitir que usuários logados criem eventos com informações como nome do evento, descrição, data, horário e localização.
+3.	Visualização de Eventos:
+	•	Listar todos os eventos criados pelo usuário, com a opção de visualizar detalhes de cada evento.
+4.	Integração com API de Previsão do Tempo:
+	•	Integrar com uma API de previsão do tempo (por exemplo, OpenWeatherMap) para mostrar a previsão do tempo no dia do evento com base na localização fornecida.
+5.	Banco de Dados:
+	•	Utilizar um banco de dados SQLite para armazenar informações de usuários e eventos.
+6.	Interface de Usuário:
+	•	Criar uma interface amigável utilizando HTML, Bootstrap e JavaScript.
+
+**'Estrutura do Projeto'**
+
+- event_manager/: Diretório principal do projeto.
+- backend/: Diretório contendo a lógica do servidor, APIs e banco de dados.
+- frontend/: Diretório contendo a interface do usuário.
+- tests/: Diretório contendo os testes automatizados.
 
 **`Requisitos`**
 
@@ -18,9 +33,47 @@ Este projeto tem como objetivo desenvolver uma API em Python, projetada para int
 
 - Python
 - Flask
-- Diferentes tipos de bancos de dados (MySQL, PostgreSQL, SQLite, MongoDB, entre outros.)
+- Banco de dados: SQLite
 - Git/GitHub
 - Kanban
+
+**'Atividades Principais para as Equipes'**
+
+Equipe de Back-end:
+
+1.	Autenticação e Autorização:
+	•	Desenvolver endpoints para registro e login de usuários utilizando Flask.
+	•	Implementar a gestão de sessões e tokens de autenticação.
+2.	Gestão de Eventos:
+	•	Criar endpoints para criação, visualização, edição e exclusão de eventos.
+	•	Implementar a integração com APIs externas para previsão do tempo.
+3.	Banco de Dados:
+	•	Modelar e implementar o esquema do banco de dados usando Flask-SQLAlchemy.
+	•	Gerenciar migrações de banco de dados com Flask-Migrate.
+
+Equipe de Front-end:
+
+1.	Interface de Usuário:
+	•	Desenvolver páginas de registro, login, criação e visualização de eventos usando HTML e Bootstrap.
+	•	Implementar a navegação entre as diferentes páginas e funcionalidades do aplicativo com JavaScript.
+2.	Consumo de APIs:
+	•	Integrar a interface com os endpoints do back-end para enviar e receber dados.
+	•	Exibir informações de previsão do tempo nas páginas de eventos.
+3.	Responsividade e Usabilidade:
+	•	Garantir que a interface seja responsiva e amigável para diferentes dispositivos e tamanhos de tela.
+	•	Implementar feedbacks visuais e mensagens de erro apropriadas.
+
+Equipe de Testes:
+
+1.	Testes de Unidade:
+	•	Escrever testes unitários para funções e métodos individuais do back-end.
+	•	Garantir que cada unidade de código funcione conforme o esperado.
+2.	Testes de Integração:
+	•	Desenvolver testes para verificar a integração entre diferentes componentes do sistema.
+	•	Testar a comunicação entre o front-end e o back-end, bem como a integração com APIs externas.
+3.	Testes de Interface:
+	•	Escrever testes para validar a usabilidade e funcionalidade da interface de usuário.
+	•	Garantir que todos os elementos da interface funcionem corretamente e sem erros.
 
 ### **Equipe**
 `Diagrama da equipe`
@@ -85,4 +138,4 @@ Duas pessoas responsáveis por validar e testar cada etapa do desenvolvimento, g
 
 `Escalabilidade`
 
-De acordo com as necessidades do projeto em curso, estamos prontos para dar um passo à frente e fortalecer ainda mais nossa equipe em todas as áreas pertinentes. Reconhecemos a importância de uma abordagem flexível para enfrentar os desafios que possam surgir durante o desenvolvimento do projeto. Assim, estamos comprometidos em expandir nossa equipe de maneira estratégica e eficaz, garantindo que tenhamos os recursos necessários para enfrentar qualquer obstáculo que possa surgir em nosso caminho. Estamos confiantes de que, com essa expansão, seremos capazes de atender às demandas do projeto de forma eficiente e alcançar os objetivos estabelecidos com sucesso.
+Empresas podem utilizar o “Cadastro de Eventos” para simplificar a organização e gestão de eventos internos e externos. Com funcionalidades robustas, como criação e visualização de eventos, autenticação de usuários, e integração com APIs de previsão do tempo, o sistema oferece uma plataforma centralizada e eficiente. Com isso,empresas se beneficiam de uma solução confiável, escalável e segura, que melhora a eficiência operacional e promove uma melhor gestão de eventos.
